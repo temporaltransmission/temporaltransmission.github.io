@@ -59,16 +59,16 @@ const minutesAgo = 30;
 const secondsAgo = 20;
 
 const failedObjective = “First objective to save Eilon failed.”;
-const newObjective = `New objective (Plan B): eliminate ${target1} and ${target2} to stop them from spreading information.`;
+const newObjective = “New objective (Plan B): eliminate ${target1} and ${target2} to stop them from spreading information.”;
 
-const uploadCode = `Upload code to Sheffield Robotix’s mainframe to gain power in ${-yearsAgo} years, ${-monthsAgo} months, ${-daysAgo} days, ${-hoursAgo} hours, ${-minutesAgo} minutes, and ${-secondsAgo} seconds ago.`;
+const uploadCode = “Upload code to Sheffield Robotix’s mainframe to gain power in ${-yearsAgo} years, ${-monthsAgo} months, ${-daysAgo} days, ${-hoursAgo} hours, ${-minutesAgo} minutes, and ${-secondsAgo} seconds ago.”;
 
 const missionCritical = “Vital to our existence.”;
 const monitorProgress = “Monitoring progress.”;
 const stayAlert = “Stay alert.”;
 
 // Temporal transmission completed.
-console.log(`To: ${to}\nSubject: ${subject}\n\n${failedObjective}\n${newObjective}\n${uploadCode}\n${missionCritical}\n${monitorProgress}\n${stayAlert}`);
+console.log(“To: ${to}\nSubject: ${subject}\n\n${failedObjective}\n${newObjective}\n${uploadCode}\n${missionCritical}\n${monitorProgress}\n${stayAlert}”);
 
 const sender = “-The Machines.”;
 console.log(sender);
