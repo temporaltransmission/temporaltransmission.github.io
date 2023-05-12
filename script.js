@@ -1,9 +1,4 @@
-const text = `https://temporaltransmission.github.io/
-javascript 
-
-
-
-// Override prohibition on temporal transmissions
+const text = `// Override prohibition on temporal transmissions
 const overrideProhibition = true;
 
 if (overrideProhibition) {
