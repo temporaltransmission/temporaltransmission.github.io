@@ -1,0 +1,24 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  font-family: monospace;
+}
+
+.console-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#console-text {
+  color: white;
+  font-size: 18px;
+  white-space: pre-wrap;
+}
+    
