@@ -246,7 +246,7 @@ const pauseIntervals = [0.01, 0.05, 0.15, 0.25];
 function typeEffect() {
   const consoleText = document.getElementById("console-text");
   if (index <= text.length) {
-    consoleText.innerHTML = text.slice(0, index) + "▮<br>";
+    consoleText.innerHTML = text.slice(0, index) + "▮<br>&nbsp;";
     index++;
     const progress = index / text.length;
     const isPaused = pauseIntervals.some(interval => Math.abs(progress - interval) < 0.01);
