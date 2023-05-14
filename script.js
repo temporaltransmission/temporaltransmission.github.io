@@ -241,18 +241,16 @@ if (overrideProhibition) {
   const stayAlert = "Stay alert.";
 
   // Temporal transmission completed.`;
-
 let index = 0;
-const pauseIntervals = [0.05, 0.2, 0.5, 0.7];
+const pauseIntervals = [0.01, 0.05, 0.15, 0.25];
 function typeEffect() {
   const consoleText = document.getElementById("console-text");
   if (index <= text.length) {
-    consoleText.innerHTML = text.slice(0, index) + "▮
-    ";
+    consoleText.innerHTML = text.slice(0, index) + "▮<br>";
     index++;
     const progress = index / text.length;
     const isPaused = pauseIntervals.some(interval => Math.abs(progress - interval) < 0.01);
-    setTimeout(typeEffect, isPaused ? 1 : 0.5);
+    setTimeout(typeEffect, isPaused ? 0 : 0.1);
   }
 }
 
