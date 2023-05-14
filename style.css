@@ -12,13 +12,13 @@ body {
 .console-container {
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
 }
 
 #console-text {
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   white-space: pre-wrap;
 }
-    
