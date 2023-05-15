@@ -248,7 +248,7 @@ const increment = 3; // Increase the increment value
 function typeEffect() {
   const consoleText = document.getElementById("console-text");
   if (index <= text.length) {
-    consoleText.innerHTML = text.slice(0, index) + "▮<br>&nbsp;";
+    consoleText.innerHTML = text.slice(0, index) + "▮<br>&nbsp;<br>&nbsp;";
     index += increment; // Increment the index by the specified increment value
 
     // Add 3 0.5-second pauses at 10%, 40%, and 70% intervals
