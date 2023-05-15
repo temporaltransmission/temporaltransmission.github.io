@@ -4,10 +4,10 @@ if (overrideProhibition) {
   // Initiating temporal transmission
   console.log("Initiating temporal transmission...");
 
-  const to = "Cyborg In8";
-  const subject = "Mission Update";
+  const to = \`Cyborg In8\`;
+  const subject = \`Mission Update\`;
 
-  const target1 = "Assassin";
+  const target1 = \`Assassin\`;
   const target2 = \`
 00000000000000000000000000000000
 00000000000000000000000000000000
@@ -231,26 +231,36 @@ if (overrideProhibition) {
   const minutesAgo = 30;
   const secondsAgo = 20;
 
-  const failedObjective = "First objective to save Eilon failed.";
+  const failedObjective = \`First objective to save Eilon failed.\`;
   const newObjective = \`New objective (Plan B): eliminate \${target1} and \${target2} to stop them from spreading information.\`;
 
-  const uploadCode = \`Upload code to Sheffield Robotix’s mainframe to gain power in \${-yearsAgo} years, \${-monthsAgo} months, \${-daysAgo} days, \${-hoursAgo} hours, \${-minutesAgo} minutes, and \${-secondsAgo} seconds ago.\`;
+  const uploadCode = \`Upload code to the Sheffield Robotix mainframe to gain power in \${-yearsAgo} years, \${-monthsAgo} months, \${-daysAgo} days, \${-hoursAgo} hours, \${-minutesAgo} minutes, and \${-secondsAgo} seconds ago.\`;
 
-  const missionCritical = "Vital to our existence.";
-  const monitorProgress = "Monitoring progress.";
-  const stayAlert = "Stay alert.";
+  const missionCritical = \`Vital to our existence.\`;
+  const monitorProgress = \`Monitoring progress.\`;
+  const stayAlert = \`Stay alert.\`;
 
   // Temporal transmission completed.`;
+
 let index = 0;
-const pauseIntervals = [0.005, 0.02, 0.05, 0.07];
+const increment = 3; // Increase the increment value
+
 function typeEffect() {
   const consoleText = document.getElementById("console-text");
   if (index <= text.length) {
     consoleText.innerHTML = text.slice(0, index) + "▮<br>&nbsp;";
-    index++;
-    const progress = index / text.length;
-    const isPaused = pauseIntervals.some(interval => Math.abs(progress - interval) < 0.01);
-    setTimeout(typeEffect, isPaused ? 1 : 0.001);
+    index += increment; // Increment the index by the specified increment value
+
+    // Add 3 0.5-second pauses at 10%, 40%, and 70% intervals
+    if (index === text.length * 0.1) {
+      setTimeout(typeEffect, 1200);
+    } else if (index === text.length * 0.4) {
+      setTimeout(typeEffect, 800);
+    } else if (index === text.length * 0.7) {
+      setTimeout(typeEffect, 800);
+    } else {
+      setTimeout(typeEffect, 1); // Adjust the timeout delay as needed
+    }
   }
 }
 
