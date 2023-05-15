@@ -7,8 +7,8 @@ if (overrideProhibition) {
   const to = \`Cyborg In8\`;
   const subject = \`Mission Update\`;
 
-  const target1 = \`Assassin\`;
-  const target2 = \`
+  const Target1 = \`Assassin\`;
+  const Target2 = \`
 00000000000000000000000000000000
 00000000000000000000000000000000
 00001111111111111111110000000000
