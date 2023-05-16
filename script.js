@@ -243,15 +243,16 @@ if (overrideProhibition) {
   // Temporal transmission completed.`;
 
 let index = 0;
-const increment = 3; // Increase the increment value
-const pauseDuration = 1200; // Pause duration in milliseconds
+const increment = 3;
+const pauseDuration = 1500;
+let cursorColor = "#09f71f";
 
 function typeEffect() {
   const consoleText = document.getElementById("console-text");
   if (index <= text.length) {
-    consoleText.innerHTML = text.slice(0, index) + "▮<br>&nbsp;<br>&nbsp;";
+    cursorColor = cursorColor === "#09f71f" ? "#000000" : "#09f71f";
+    consoleText.innerHTML = text.slice(0, index) + '<span style="color:' + cursorColor + '">▮</span><br>&nbsp;<br>&nbsp;';
 
-    // Check for pause intervals
     if (index >= text.length * 0.1 && index < text.length * 0.1 + increment) {
       setTimeout(typeEffect, pauseDuration);
       index += increment;
@@ -262,9 +263,16 @@ function typeEffect() {
       setTimeout(typeEffect, pauseDuration);
       index += increment;
     } else {
-      index += increment; // Increment the index by the specified increment value
-      setTimeout(typeEffect, 1); // Adjust the timeout delay as needed
+      index += increment;
+      setTimeout(typeEffect, 1);
     }
+  } else {
+    // Continue flashing the cursor after the text has finished typing
+    setTimeout(() => {
+      cursorColor = cursorColor === "#09f71f" ? "#000000" : "#09f71f";
+      consoleText.innerHTML = text + '<span style="color:' + cursorColor + '">▮</span><br>&nbsp;<br>&nbsp;';
+      setTimeout(typeEffect, 500);
+    }, 500);
   }
 }
 
