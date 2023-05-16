@@ -244,21 +244,25 @@ if (overrideProhibition) {
 
 let index = 0;
 const increment = 3; // Increase the increment value
+const pauseDuration = 1200; // Pause duration in milliseconds
 
 function typeEffect() {
   const consoleText = document.getElementById("console-text");
   if (index <= text.length) {
     consoleText.innerHTML = text.slice(0, index) + "▮<br>&nbsp;<br>&nbsp;";
-    index += increment; // Increment the index by the specified increment value
 
-    // Add 3 0.5-second pauses at 10%, 40%, and 70% intervals
-    if (index === text.length * 0.1) {
-      setTimeout(typeEffect, 1200);
-    } else if (index === text.length * 0.4) {
-      setTimeout(typeEffect, 800);
-    } else if (index === text.length * 0.7) {
-      setTimeout(typeEffect, 800);
+    // Check for pause intervals
+    if (index >= text.length * 0.1 && index < text.length * 0.1 + increment) {
+      setTimeout(typeEffect, pauseDuration);
+      index += increment;
+    } else if (index >= text.length * 0.4 && index < text.length * 0.4 + increment) {
+      setTimeout(typeEffect, pauseDuration);
+      index += increment;
+    } else if (index >= text.length * 0.7 && index < text.length * 0.7 + increment) {
+      setTimeout(typeEffect, pauseDuration);
+      index += increment;
     } else {
+      index += increment; // Increment the index by the specified increment value
       setTimeout(typeEffect, 1); // Adjust the timeout delay as needed
     }
   }
